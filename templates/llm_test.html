@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}LLM-like Streaming - FastAPI Streaming{% endblock %}
+{% block heading %}LLM-like Streaming Demo{% endblock %}
+
+{% block content %}
+<div class="input-group">
+    <label for="prompt">Prompt:</label>
+    <input type="text" id="prompt" value="FastAPI" placeholder="Enter your question" style="width: 300px;">
+    <button onclick="startLLMStream()" id="startBtn">Ask Question</button>
+    <button onclick="stopLLMStream()" id="stopBtn" disabled>Stop</button>
+    <button onclick="clearLLMResponse()">Clear</button>
+</div>
+
+<div class="status" id="status">Ready</div>
+
+<div class="output-area" id="response-area"></div>
+
+<div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 4px;">
+    <h3>About LLM-like Streaming</h3>
+    <p>ChatGPTのような大規模言語モデルのストリーミング応答を模擬したデモです。</p>
+    <ul>
+        <li>文字単位でのリアルタイム表示</li>
+        <li>タイピング効果の実装</li>
+        <li>ユーザビリティの向上</li>
+        <li>応答の高速化体験</li>
+    </ul>
+    <p><strong>試してみるプロンプト:</strong> "FastAPI", "Python", またはお好きなキーワード</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='/js/llm-stream.js') }}"></script>
+{% endblock %}

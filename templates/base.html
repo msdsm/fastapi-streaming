@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FastAPI Streaming Demo{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/common.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <h1>{% block heading %}FastAPI Streaming Demo{% endblock %}</h1>
+        
+        <div class="nav-links">
+            <strong>Test Pages:</strong>
+            <a href="/test-sse">SSE Test</a>
+            <a href="/test-json">JSON Streaming</a>
+            <a href="/test-llm">LLM-like Streaming</a>
+            <a href="/docs" target="_blank">API Docs</a>
+        </div>
+        
+        {% block content %}{% endblock %}
+    </div>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

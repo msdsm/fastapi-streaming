@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}JSON Streaming Test - FastAPI Streaming{% endblock %}
+{% block heading %}JSON Streaming Test{% endblock %}
+
+{% block content %}
+<div class="input-group">
+    <button onclick="startJsonStream()" id="startBtn">Start JSON Streaming</button>
+    <button onclick="stopJsonStream()" id="stopBtn" disabled>Stop Stream</button>
+    <button onclick="clearJsonOutput()">Clear</button>
+</div>
+
+<div class="status" id="status">Ready</div>
+
+<div class="output-area" id="output"></div>
+
+<div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 4px;">
+    <h3>About JSON Streaming</h3>
+    <p>JSONストリーミングは、大きなデータセットを分割して送信する技術です。</p>
+    <ul>
+        <li>メモリ使用量の削減</li>
+        <li>レスポンス時間の短縮</li>
+        <li>ユーザー体験の向上</li>
+        <li>リアルタイムデータ処理</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='/js/json-stream.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}SSE Test - FastAPI Streaming{% endblock %}
+{% block heading %}Server-Sent Events Test{% endblock %}
+
+{% block content %}
+<div class="input-group">
+    <button onclick="startSSE()" id="startBtn">Start SSE Stream</button>
+    <button onclick="stopSSE()" id="stopBtn">Stop Stream</button>
+    <button onclick="clearMessages()">Clear Messages</button>
+</div>
+
+<div class="status" id="status">Ready</div>
+
+<div class="output-area" id="messages"></div>
+
+<div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 4px;">
+    <h3>About Server-Sent Events (SSE)</h3>
+    <p>SSEは、サーバーからクライアントへリアルタイムでデータをプッシュする技術です。</p>
+    <ul>
+        <li>一方向通信（サーバー → クライアント）</li>
+        <li>自動再接続機能</li>
+        <li>テキストベースのプロトコル</li>
+        <li>イベントストリーミングに最適</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='/js/sse.js') }}"></script>
+{% endblock %}
