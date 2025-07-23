@@ -26,7 +26,7 @@ This project covers 3 streaming techniques:
 uv sync
 
 # Start server
-uv run uvicorn main:app --reload
+uv run run.py
 ```
 
 ## Demo Pages
